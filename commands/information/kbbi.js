@@ -9,7 +9,7 @@ module.exports = {
     example: `%prefix%command <query>`,
     start: async(client, m, { text }) => {
         let fetch = await fetchUrl(global.api("zenz", "/information/kbbi", { query: text }, "apikey"))
-        let caption = `Arti Kbbi Dari ${toUpper(text)} :\n\n`
+        let caption = `Arti Kbbi Dari ${text} :\n\n`
         let i = fetch.result
         caption += `${i.arti}`
         client.sendText(m.from, caption, m)
