@@ -1,0 +1,32 @@
+const { fetchUrl, isUrl } = require("../../lib/Function")
+
+module.exports = {
+    name: "youtube",
+    alias: ["ytdl"],
+    use: "<url>",
+    desc: "Download Media From https://youtube.com",
+    type: "downloader",
+    example: "%prefix%command <url>",
+    isPremium: true,
+    start: async(client, m, { text }) => {
+        let fetch = await fetchUrl(global.api("zenz", "/downloader/youtube", { url: isUrl(text)[0] }, "apikey"))
+        let caption = `*Youtube Downloader*\n\n`
+        let i = fetch.result
+        caption += `⭔ Title : ${i.title}\n`
+        caption += `⭔ source : ${i.source}\n`
+        caption += `⭔ duration : ${i.duration}\n\n`
+        let buttons = [
+            {buttonId: `dl audio ${i.getAudio}`, buttonText: { displayText: 'Get Audio'}, type: 1 },
+            {buttonId: `dl ${i.getVideo}`, buttonText: { displayText: 'Get Video'}, type: 1 }
+        ]
+        let buttonMessage = {
+            image: { url: i.thumb },
+            caption: caption,
+            footer: config.footer,
+            buttons: buttons,
+            headerType: 4
+        }
+        client.sendMessage(m.from, buttonMessage, { quoted: m })
+    },
+    isQuery: true
+}

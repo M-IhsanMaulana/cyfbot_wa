@@ -1,0 +1,18 @@
+[
+    {
+        "from": "6285773624127-1610161468@g.us",
+        "offline": false,
+        "antilink": false,
+        "badword": false,
+        "antidelete": true,
+        "detect": false,
+        "viewOnce": false,
+        "nsfw": false,
+        "leveling": false,
+        "welcome": {
+            "status": false,
+            "add": "Welcome To My Group",
+            "remove": "Leave From My Group"
+        }
+    }
+]

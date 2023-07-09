@@ -1,0 +1,22 @@
+{
+  "APIs": {
+    "zenz": "https://api.zahwazein.xyz",
+    "apikey": "cyfcommunity"
+  },
+  "options": {
+    "autoRead": true,
+    "self": true,
+    "limitCount": 20,
+    "limitGame": 20
+  },
+  "exif": {
+    "packname": "CYF Community Bot",
+    "author": "@i.sanmaulana23_"
+  },
+  "owner": [
+    "6285773624127"
+  ],
+  "timezone": "Asia/Jakarta",
+  "footer": "Powered by https://api.zahwazein.xyz",
+  "botname": "CYF Community Bot"
+}
